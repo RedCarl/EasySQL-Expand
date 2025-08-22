@@ -1,6 +1,7 @@
 package cn.carljoy.easysql;
 
-import cc.carm.lib.easysql.annotation.Column;
+
+import cn.carljoy.easysql.annotation.Column;
 
 import java.io.Serializable;
 import java.lang.invoke.SerializedLambda;

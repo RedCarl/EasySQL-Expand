@@ -1,6 +1,7 @@
 package cn.carljoy.easysql;
 
-import cc.carm.lib.easysql.annotation.*;
+
+import cn.carljoy.easysql.annotation.*;
 
 import java.lang.reflect.Field;
 import java.util.ArrayList;

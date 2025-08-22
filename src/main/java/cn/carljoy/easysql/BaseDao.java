@@ -33,9 +33,17 @@ public class BaseDao<T> {
         createTable();
     }
 
+    /**
+     * 创建查询包装器，无需指定类型
+     * @return QueryWrapper实例
+     */
+    protected QueryWrapper<T> createQuery() {
+        return QueryWrapper.create(clazz);
+    }
+
     /* 根据主键查询数据 */
     public T selectOneById(Object id) {
-        return selectOneByQuery(QueryWrapper.create(clazz).eq(tableInfo.pk, id));
+        return selectOneByQuery(createQuery().eq(tableInfo.pk, id));
     }
 
     /* 根据查询条件来查询 1 条数据 */
@@ -72,7 +80,7 @@ public class BaseDao<T> {
 
     /* 查询全部数据 */
     public List<T> selectAll() {
-        return selectListByQuery(QueryWrapper.create(clazz));
+        return selectListByQuery(createQuery());
     }
 
     /* 查询数据量 */
