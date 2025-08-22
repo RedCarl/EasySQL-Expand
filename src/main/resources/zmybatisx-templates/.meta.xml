@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<templates>
+    <template>
+        <property name="configName" value="dao"/>
+        <property name="configFile" value="dao.ftl"/>
+        <property name="fileName" value="${domain.fileName}Dao"/>
+        <property name="suffix" value=".java"/>
+        <property name="packageName" value="${domain.basePackage}.dao"/>
+        <property name="encoding" value="${domain.encoding}"/>
+        <property name="basePath" value="${domain.basePath}"/>
+    </template>
+    <template>
+        <!-- 注意: 实体类无论如何都会生成 -->
+        <!-- 1.5.x 开始 configName=domain的配置会被特殊处理, 其他配置跟随实体的配置-->
+        <!-- 主要用于生成 LiteSQL 实体类 -->
+        <property name="configName" value="domain"/>
+        <property name="configFile" value="domain.ftl"/>
+        <property name="fileName" value="${domain.fileName}"/>
+        <property name="suffix" value=".java"/>
+        <property name="packageName" value="${domain.basePackage}.entity"/>
+        <property name="encoding" value="${domain.encoding}"/>
+        <property name="basePath" value="${domain.basePath}"/>
+    </template>
+</templates>
