@@ -1,6 +1,7 @@
 package cn.carljoy.easysql;
 
 import cc.carm.lib.easysql.api.builder.TableQueryBuilder;
+import lombok.Getter;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -8,6 +9,8 @@ import java.util.List;
 public class QueryWrapper<T> {
 
     private final TableInfo table;
+
+    @Getter
     private final Class<T> entityClass;
 
     // 存储条件信息的内部类
@@ -271,10 +274,6 @@ public class QueryWrapper<T> {
 
     public TableInfo getTableInfo() {
         return table;
-    }
-
-    public Class<T> getEntityClass() {
-        return entityClass;
     }
 
     /**
